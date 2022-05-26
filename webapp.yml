@@ -1,0 +1,4 @@
+- hosts: ansmachine
+  roles:
+  - jdk
+  - tomcat    

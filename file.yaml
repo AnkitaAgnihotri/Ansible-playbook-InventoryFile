@@ -1,0 +1,14 @@
+- hosts: ansmachine
+  vars:
+  - file_path: /home/devops
+  tasks:
+  - name: Create a folder
+    file:
+      path: "{{ file_path }}/test"
+      state: directory
+    notify: Create file inside the folder
+  handlers:
+  - name: Create file inside the folder
+    file:
+      path: "{{ file_path }}/test/testfile"
+      state: touch

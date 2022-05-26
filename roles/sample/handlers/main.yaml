@@ -1,0 +1,4 @@
+ - name: Create file inside the folder
+   file:
+      path: "{{ file_path }}/test/testfile"
+      state: touch

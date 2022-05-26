@@ -1,0 +1,3 @@
+---
+# vars file for roles/tomcat
+tomcat_port: 12012

@@ -1,0 +1,6 @@
+ - name: Create a folder
+   file:
+      path: "{{ file_path }}/test"
+      state: directory
+   notify: Create file inside the folder
+

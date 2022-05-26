@@ -1,0 +1,22 @@
+---
+# tasks file for roles/tomcat
+- name: Create installation folder
+  file:
+    path: "{{ ansible_user_dir }}/WebAPP"
+    state: directory
+- name: Install tomcat
+  unarchive:
+    src: apache-tomcat-9.0.63.tar.gz
+    dest: "{{ ansible_user_dir }}/WebAPP"
+- name: Deploy the application
+  copy:
+    src: Demo2.war
+    dest: "{{ ansible_user_dir }}/WebAPP/apache-tomcat-9.0.63/webapps"
+- name: Change the port
+  template:
+    src: server.xml.j2
+    dest: "{{ ansible_user_dir }}/WebAPP/apache-tomcat-9.0.63/conf/server.xml"
+- name: Start tomcat server
+  shell:
+    cmd: "nohup {{ ansible_user_dir }}/WebAPP/apache-tomcat-9.0.63/bin/startup.sh"
+

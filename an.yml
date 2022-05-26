@@ -1,0 +1,7 @@
+# tasks file for roles/jdk
+- name: Install JDK on Ubuntu 18.04
+  apt:
+      name: default-jdk
+      staet: present
+      update_cache: yes      
+  become: yes    
