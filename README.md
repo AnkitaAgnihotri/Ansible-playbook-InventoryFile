@@ -10,3 +10,13 @@
 ### programmer can also use pre/post build steps (jenkins->project->configure) to use sonar for code quality inspection and testing coverage (system testing by gecko driver selenium)
 ### and deploy binary artifacts (war/jar) in binary Repository JFROG
 ### After this artifacts can be deployed on tomcat server to get UI output of webApplication by setting post-Build steps for tomcat under jenkins to make automation end to end. 
+### this is automated Deployment from sourceCodeRepo to binaryCodeRepo using CI-CD pipeline using tool :
+#### code writing IDE(eclips/intellij)
+#### BuildTool(maven)
+#### Source Code Management (git/gitea)
+#### jenkins (for automation provide CI-CD pipeline by configuring project with scm,build,buildTrigger,pre-buildSteps,post-buildSteps,post-buildActions)
+#### storing artifacts in binarySourceCodeRepo (Jfrog)
+#### for code quality inspection and test coverage (Sonarqube)
+#### server for webApplication Deployment to view (Apache tomcat)
+#### To maintain connectivity between remote and local machine and to do automated installation and deployment from one machine to another (one environment to another) using playbook without any need of agent installed in remote machine (only require python2/3) we use ANSIBLE
+#### containers (docker/kubernetes) also come in picture for contanerization and orchestration of service
